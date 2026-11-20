@@ -8,7 +8,7 @@ use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\ProdukPublikController;
 
 // HALAMAN PUBLIK — TANPA LOGIN
-Route::redirect('/', '/login')->name('home');
+Route::get('/', [ProdukPublikController::class, 'index'])->name('home');
 Route::get('/menu', [ProdukPublikController::class, 'index'])->name('menu.index');
 Route::get('/menu/{id}', [ProdukPublikController::class, 'show'])->name('menu.show');
 
